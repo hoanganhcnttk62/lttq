@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="phongvienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="phongvientaitoasoan">
+    <Key>
+      <PropertyRef Name="Manv" />
+    </Key>
+    <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sogiolamthem" Type="int" />
+  </EntityType>
+  <EntityType Name="phongvienthuongtru">
+    <Key>
+      <PropertyRef Name="Manv" />
+    </Key>
+    <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phucap" Type="float" />
+  </EntityType>
+  <EntityType Name="thongtinphongvien">
+    <Key>
+      <PropertyRef Name="Manv" />
+    </Key>
+    <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gioitinh" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dienthoai" Type="nvarchar" MaxLength="255" />
+    <Property Name="Ngayvaolam" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__phongvient__Manv__4BAC3F29">
+    <End Role="thongtinphongvien" Type="Self.thongtinphongvien" Multiplicity="1" />
+    <End Role="phongvienthuongtru" Type="Self.phongvienthuongtru" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="thongtinphongvien">
+        <PropertyRef Name="Manv" />
+      </Principal>
+      <Dependent Role="phongvienthuongtru">
+        <PropertyRef Name="Manv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phongvient__Manv__4E88ABD4">
+    <End Role="thongtinphongvien" Type="Self.thongtinphongvien" Multiplicity="1" />
+    <End Role="phongvientaitoasoan" Type="Self.phongvientaitoasoan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="thongtinphongvien">
+        <PropertyRef Name="Manv" />
+      </Principal>
+      <Dependent Role="phongvientaitoasoan">
+        <PropertyRef Name="Manv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="phongvienModelStoreContainer">
+    <EntitySet Name="phongvientaitoasoan" EntityType="Self.phongvientaitoasoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="phongvienthuongtru" EntityType="Self.phongvienthuongtru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thongtinphongvien" EntityType="Self.thongtinphongvien" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__phongvient__Manv__4BAC3F29" Association="Self.FK__phongvient__Manv__4BAC3F29">
+      <End Role="thongtinphongvien" EntitySet="thongtinphongvien" />
+      <End Role="phongvienthuongtru" EntitySet="phongvienthuongtru" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phongvient__Manv__4E88ABD4" Association="Self.FK__phongvient__Manv__4E88ABD4">
+      <End Role="thongtinphongvien" EntitySet="thongtinphongvien" />
+      <End Role="phongvientaitoasoan" EntitySet="phongvientaitoasoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

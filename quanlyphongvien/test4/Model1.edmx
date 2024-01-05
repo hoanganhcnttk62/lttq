@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="phongvienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="phongvientaitoasoan">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sogiolamthem" Type="int" />
+        </EntityType>
+        <EntityType Name="phongvienthuongtru">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phucap" Type="float" />
+        </EntityType>
+        <EntityType Name="thongtinphongvien">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hoten" Type="nvarchar" MaxLength="255" />
+          <Property Name="Gioitinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dienthoai" Type="nvarchar" MaxLength="255" />
+          <Property Name="Ngayvaolam" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__phongvient__Manv__4BAC3F29">
+          <End Role="thongtinphongvien" Type="Self.thongtinphongvien" Multiplicity="1" />
+          <End Role="phongvienthuongtru" Type="Self.phongvienthuongtru" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="thongtinphongvien">
+              <PropertyRef Name="Manv" />
+            </Principal>
+            <Dependent Role="phongvienthuongtru">
+              <PropertyRef Name="Manv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__phongvient__Manv__4E88ABD4">
+          <End Role="thongtinphongvien" Type="Self.thongtinphongvien" Multiplicity="1" />
+          <End Role="phongvientaitoasoan" Type="Self.phongvientaitoasoan" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="thongtinphongvien">
+              <PropertyRef Name="Manv" />
+            </Principal>
+            <Dependent Role="phongvientaitoasoan">
+              <PropertyRef Name="Manv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="phongvienModelStoreContainer">
+          <EntitySet Name="phongvientaitoasoan" EntityType="Self.phongvientaitoasoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="phongvienthuongtru" EntityType="Self.phongvienthuongtru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="thongtinphongvien" EntityType="Self.thongtinphongvien" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__phongvient__Manv__4BAC3F29" Association="Self.FK__phongvient__Manv__4BAC3F29">
+            <End Role="thongtinphongvien" EntitySet="thongtinphongvien" />
+            <End Role="phongvienthuongtru" EntitySet="phongvienthuongtru" />
+          </AssociationSet>
+          <AssociationSet Name="FK__phongvient__Manv__4E88ABD4" Association="Self.FK__phongvient__Manv__4E88ABD4">
+            <End Role="thongtinphongvien" EntitySet="thongtinphongvien" />
+            <End Role="phongvientaitoasoan" EntitySet="phongvientaitoasoan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="phongvienModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="phongvientaitoasoan">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sogiolamthem" Type="Int32" />
+          <NavigationProperty Name="thongtinphongvien" Relationship="Self.FK__phongvient__Manv__4E88ABD4" FromRole="phongvientaitoasoan" ToRole="thongtinphongvien" />
+        </EntityType>
+        <EntityType Name="phongvienthuongtru">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phucap" Type="Double" />
+          <NavigationProperty Name="thongtinphongvien" Relationship="Self.FK__phongvient__Manv__4BAC3F29" FromRole="phongvienthuongtru" ToRole="thongtinphongvien" />
+        </EntityType>
+        <EntityType Name="x">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hoten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Gioitinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dienthoai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Ngayvaolam" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="phongvientaitoasoan" Relationship="Self.FK__phongvient__Manv__4E88ABD4" FromRole="thongtinphongvien" ToRole="phongvientaitoasoan" />
+          <NavigationProperty Name="phongvienthuongtru" Relationship="Self.FK__phongvient__Manv__4BAC3F29" FromRole="thongtinphongvien" ToRole="phongvienthuongtru" />
+        </EntityType>
+        <Association Name="FK__phongvient__Manv__4E88ABD4">
+          <End Role="thongtinphongvien" Type="phongvienModel.x" Multiplicity="1" />
+          <End Role="phongvientaitoasoan" Type="Self.phongvientaitoasoan" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="thongtinphongvien">
+              <PropertyRef Name="Manv" />
+            </Principal>
+            <Dependent Role="phongvientaitoasoan">
+              <PropertyRef Name="Manv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__phongvient__Manv__4BAC3F29">
+          <End Role="thongtinphongvien" Type="phongvienModel.x" Multiplicity="1" />
+          <End Role="phongvienthuongtru" Type="Self.phongvienthuongtru" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="thongtinphongvien">
+              <PropertyRef Name="Manv" />
+            </Principal>
+            <Dependent Role="phongvienthuongtru">
+              <PropertyRef Name="Manv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="phongvienEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="phongvientaitoasoans" EntityType="Self.phongvientaitoasoan" />
+          <EntitySet Name="phongvienthuongtrus" EntityType="Self.phongvienthuongtru" />
+          <EntitySet Name="x" EntityType="phongvienModel.x" />
+          <AssociationSet Name="FK__phongvient__Manv__4E88ABD4" Association="Self.FK__phongvient__Manv__4E88ABD4">
+            <End Role="thongtinphongvien" EntitySet="x" />
+            <End Role="phongvientaitoasoan" EntitySet="phongvientaitoasoans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__phongvient__Manv__4BAC3F29" Association="Self.FK__phongvient__Manv__4BAC3F29">
+            <End Role="thongtinphongvien" EntitySet="x" />
+            <End Role="phongvienthuongtru" EntitySet="phongvienthuongtrus" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="phongvienModelStoreContainer" CdmEntityContainer="phongvienEntities">
+          <EntitySetMapping Name="phongvientaitoasoans">
+            <EntityTypeMapping TypeName="phongvienModel.phongvientaitoasoan">
+              <MappingFragment StoreEntitySet="phongvientaitoasoan">
+                <ScalarProperty Name="Manv" ColumnName="Manv" />
+                <ScalarProperty Name="Sogiolamthem" ColumnName="Sogiolamthem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phongvienthuongtrus">
+            <EntityTypeMapping TypeName="phongvienModel.phongvienthuongtru">
+              <MappingFragment StoreEntitySet="phongvienthuongtru">
+                <ScalarProperty Name="Manv" ColumnName="Manv" />
+                <ScalarProperty Name="Phucap" ColumnName="Phucap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="x">
+            <EntityTypeMapping TypeName="phongvienModel.x">
+              <MappingFragment StoreEntitySet="thongtinphongvien">
+                <ScalarProperty Name="Manv" ColumnName="Manv" />
+                <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+                <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+                <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+                <ScalarProperty Name="Ngayvaolam" ColumnName="Ngayvaolam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

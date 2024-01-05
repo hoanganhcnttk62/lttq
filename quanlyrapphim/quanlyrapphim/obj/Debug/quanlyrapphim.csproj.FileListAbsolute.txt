@@ -1,0 +1,15 @@
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\quanlyrapphim.exe.config
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\quanlyrapphim.exe
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\quanlyrapphim.pdb
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.csproj.AssemblyReference.cache
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.Form1.resources
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.Properties.Resources.resources
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.csproj.GenerateResource.cache
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.csproj.CoreCompileInputs.cache
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.exe
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.pdb
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\EntityFramework.dll
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\EntityFramework.SqlServer.dll
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\EntityFramework.xml
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\bin\Debug\EntityFramework.SqlServer.xml
+C:\lttrucquan\quanlyrapphim\quanlyrapphim\obj\Debug\quanlyrapphim.csproj.CopyComplete

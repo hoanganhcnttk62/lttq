@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quanlyrapphimModelStoreContainer" CdmEntityContainer="quanlyrapphimEntities2">
+    <EntitySetMapping Name="phim2d">
+      <EntityTypeMapping TypeName="quanlyrapphimModel.phim2d">
+        <MappingFragment StoreEntitySet="phim2d">
+          <ScalarProperty Name="Madon" ColumnName="Madon" />
+          <ScalarProperty Name="Phuthughedoi" ColumnName="Phuthughedoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phim3d">
+      <EntityTypeMapping TypeName="quanlyrapphimModel.phim3d">
+        <MappingFragment StoreEntitySet="phim3d">
+          <ScalarProperty Name="Madon" ColumnName="Madon" />
+          <ScalarProperty Name="Phuthusuatchieudacbiet" ColumnName="Phuthusuatchieudacbiet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quanlyphims">
+      <EntityTypeMapping TypeName="quanlyrapphimModel.quanlyphim">
+        <MappingFragment StoreEntitySet="quanlyphim">
+          <ScalarProperty Name="Madon" ColumnName="Madon" />
+          <ScalarProperty Name="Tenphim" ColumnName="Tenphim" />
+          <ScalarProperty Name="Quocgia" ColumnName="Quocgia" />
+          <ScalarProperty Name="Theloai" ColumnName="Theloai" />
+          <ScalarProperty Name="Ngaycongchieu" ColumnName="Ngaycongchieu" />
+          <ScalarProperty Name="Dotuoiquidinh" ColumnName="Dotuoiquidinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,15 @@
+C:\lttrucquan\test4\test4\bin\Debug\test4.exe.config
+C:\lttrucquan\test4\test4\bin\Debug\test4.exe
+C:\lttrucquan\test4\test4\bin\Debug\test4.pdb
+C:\lttrucquan\test4\test4\obj\Debug\test4.csproj.AssemblyReference.cache
+C:\lttrucquan\test4\test4\obj\Debug\test4.Form1.resources
+C:\lttrucquan\test4\test4\obj\Debug\test4.Properties.Resources.resources
+C:\lttrucquan\test4\test4\obj\Debug\test4.csproj.GenerateResource.cache
+C:\lttrucquan\test4\test4\obj\Debug\test4.csproj.CoreCompileInputs.cache
+C:\lttrucquan\test4\test4\obj\Debug\test4.exe
+C:\lttrucquan\test4\test4\obj\Debug\test4.pdb
+C:\lttrucquan\test4\test4\bin\Debug\EntityFramework.dll
+C:\lttrucquan\test4\test4\bin\Debug\EntityFramework.SqlServer.dll
+C:\lttrucquan\test4\test4\bin\Debug\EntityFramework.xml
+C:\lttrucquan\test4\test4\bin\Debug\EntityFramework.SqlServer.xml
+C:\lttrucquan\test4\test4\obj\Debug\test4.csproj.CopyComplete

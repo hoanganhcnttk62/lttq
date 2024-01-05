@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="phongvienModelStoreContainer" CdmEntityContainer="phongvienEntities">
+    <EntitySetMapping Name="phongvientaitoasoans">
+      <EntityTypeMapping TypeName="phongvienModel.phongvientaitoasoan">
+        <MappingFragment StoreEntitySet="phongvientaitoasoan">
+          <ScalarProperty Name="Manv" ColumnName="Manv" />
+          <ScalarProperty Name="Sogiolamthem" ColumnName="Sogiolamthem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phongvienthuongtrus">
+      <EntityTypeMapping TypeName="phongvienModel.phongvienthuongtru">
+        <MappingFragment StoreEntitySet="phongvienthuongtru">
+          <ScalarProperty Name="Manv" ColumnName="Manv" />
+          <ScalarProperty Name="Phucap" ColumnName="Phucap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="x">
+      <EntityTypeMapping TypeName="phongvienModel.x">
+        <MappingFragment StoreEntitySet="thongtinphongvien">
+          <ScalarProperty Name="Manv" ColumnName="Manv" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+          <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+          <ScalarProperty Name="Ngayvaolam" ColumnName="Ngayvaolam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

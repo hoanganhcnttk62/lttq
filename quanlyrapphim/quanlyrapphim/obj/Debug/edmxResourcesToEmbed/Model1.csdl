@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanlyrapphimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="phim2d">
+    <Key>
+      <PropertyRef Name="Madon" />
+    </Key>
+    <Property Name="Madon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phuthughedoi" Type="Double" />
+    <NavigationProperty Name="quanlyphim" Relationship="Self.FK__phim2d__Madon__4BAC3F29" FromRole="phim2d" ToRole="quanlyphim" />
+  </EntityType>
+  <EntityType Name="phim3d">
+    <Key>
+      <PropertyRef Name="Madon" />
+    </Key>
+    <Property Name="Madon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phuthusuatchieudacbiet" Type="Double" />
+    <NavigationProperty Name="quanlyphim" Relationship="Self.FK__phim3d__Madon__4E88ABD4" FromRole="phim3d" ToRole="quanlyphim" />
+  </EntityType>
+  <EntityType Name="quanlyphim">
+    <Key>
+      <PropertyRef Name="Madon" />
+    </Key>
+    <Property Name="Madon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tenphim" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Quocgia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Theloai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaycongchieu" Type="DateTime" Precision="3" />
+    <Property Name="Dotuoiquidinh" Type="Int32" />
+    <NavigationProperty Name="phim2d" Relationship="Self.FK__phim2d__Madon__4BAC3F29" FromRole="quanlyphim" ToRole="phim2d" />
+    <NavigationProperty Name="phim3d" Relationship="Self.FK__phim3d__Madon__4E88ABD4" FromRole="quanlyphim" ToRole="phim3d" />
+  </EntityType>
+  <Association Name="FK__phim2d__Madon__4BAC3F29">
+    <End Role="quanlyphim" Type="Self.quanlyphim" Multiplicity="1" />
+    <End Role="phim2d" Type="Self.phim2d" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="quanlyphim">
+        <PropertyRef Name="Madon" />
+      </Principal>
+      <Dependent Role="phim2d">
+        <PropertyRef Name="Madon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phim3d__Madon__4E88ABD4">
+    <End Role="quanlyphim" Type="Self.quanlyphim" Multiplicity="1" />
+    <End Role="phim3d" Type="Self.phim3d" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="quanlyphim">
+        <PropertyRef Name="Madon" />
+      </Principal>
+      <Dependent Role="phim3d">
+        <PropertyRef Name="Madon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quanlyrapphimEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="phim2d" EntityType="Self.phim2d" />
+    <EntitySet Name="phim3d" EntityType="Self.phim3d" />
+    <EntitySet Name="quanlyphims" EntityType="Self.quanlyphim" />
+    <AssociationSet Name="FK__phim2d__Madon__4BAC3F29" Association="Self.FK__phim2d__Madon__4BAC3F29">
+      <End Role="quanlyphim" EntitySet="quanlyphims" />
+      <End Role="phim2d" EntitySet="phim2d" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phim3d__Madon__4E88ABD4" Association="Self.FK__phim3d__Madon__4E88ABD4">
+      <End Role="quanlyphim" EntitySet="quanlyphims" />
+      <End Role="phim3d" EntitySet="phim3d" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
